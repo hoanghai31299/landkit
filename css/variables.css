@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --color-blue: rgb(51, 94, 234);
+  --color-blue-light: rgb(80, 102, 144);
+  --main-font: "Noto Sans HK", sans-serif;
+  --color-white: #fff;
+  --break-point-tablet: 1024px;
+  --break-point-tablet-sm: 768px;
+}
