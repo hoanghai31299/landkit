@@ -1,0 +1,63 @@
+.list-feature {
+  padding: 6rem 0;
+}
+.under-hero-container ul {
+  display: flex;
+}
+
+li .feature-icon svg {
+  width: 48px !important;
+  height: 48px !important;
+}
+.list-feature > ul > li {
+  padding: 0 20px;
+}
+.list-feature > ul > li h3 {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin: 15px 0;
+}
+.list-feature > ul > li p {
+  line-height: 1.6;
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--color-blue-light);
+}
+
+.list-client {
+  padding: 40px;
+  border-top: 0.5px rgba(82, 82, 82, 0.103) solid;
+  border-bottom: 0.5px rgba(82, 82, 82, 0.103) solid;
+}
+.list-client > ul {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+}
+.list-client > ul > li {
+  padding: 0 20px;
+  vertical-align: middle;
+}
+.list-client > ul > li svg {
+  color: var(--color-blue-light);
+}
+
+@media only screen and (max-width: 1024px) {
+  .list-feature > ul > li {
+    font-size: 14px;
+    padding: 25px 20px;
+  }
+  .list-client > ul {
+    grid-template-columns: repeat(3, auto);
+  }
+  .list-client > ul svg {
+    transform: scale(0.8);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .list-feature > ul {
+    flex-direction: column;
+  }
+  .list-client > ul {
+    grid-template-columns: repeat(2, auto);
+  }
+}

@@ -1,0 +1,136 @@
+.sample {
+  background-color: rgb(249, 251, 253);
+  padding: 96px 0;
+}
+.sample-container {
+  display: flex;
+}
+.form-card .card-cover {
+  clip-path: polygon(100% 0, 100% 95%, 70% 100%, 30% 100%, 0 95%, 0 0);
+  overflow: hidden;
+}
+.form-card {
+  flex: 5;
+  margin-right: 80px;
+  max-width: 400px;
+  /* max-width: 400px; */
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05) !important;
+}
+.form-card:hover {
+  transform: translateY(-10px);
+}
+.form-card .card-cover > img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.sample-form {
+  padding: 32px;
+}
+.sample-form .form-item {
+  padding: 13px 0;
+  position: relative;
+}
+.sample-form .form-item span {
+  left: 0;
+  pointer-events: none;
+  color: var(--color-blue-light);
+  position: absolute;
+  top: 27px;
+  transition: all 0.3s ease;
+}
+.sample-form .form-item input {
+  all: unset;
+  width: 100%;
+  padding: 15px 0 18px 0;
+  font-size: 15px;
+  font-weight: 300;
+  border-bottom: 0.5px rgba(138, 138, 138, 0.205) solid;
+  transition: all 0.3s ease;
+}
+
+.sample-form .form-item input:valid + span {
+  top: 0;
+  font-size: 12px;
+}
+.sample-form .form-item input:focus {
+  border-bottom: 0.5px rgba(80, 80, 80, 0.76) solid;
+}
+.sample-form a {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  background-color: rgb(56, 158, 127);
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.sample-form a:hover {
+  background-color: rgb(35, 95, 77);
+  transform: translateY(-5px);
+}
+.sample-text {
+  flex: 5;
+}
+.sample-text .sample-heading {
+  font-size: 2em;
+  line-height: 1.35;
+}
+.sample-text .sample-heading span {
+  color: rgb(66, 186, 150) !important;
+}
+.sample-text p:nth-child(2) {
+  font-size: 1.18em;
+  color: var(--color-blue-light);
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 20px 0;
+}
+.sample-text ul {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.sample-text ul li {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  color: rgb(66, 186, 150);
+}
+.sample-text ul li i {
+  color: rgb(189, 189, 189);
+  margin-right: 15px;
+}
+.type-writer {
+  border-right: 2px rgb(66, 186, 150) solid;
+  animation: typing 0.3s infinite;
+}
+@keyframes typing {
+  from {
+    border-right: 2px transparent solid;
+  }
+  to {
+    border-right: 2px rgb(66, 186, 150) solid;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .sample-text {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 95vw;
+  }
+  .sample-container {
+    flex-direction: column-reverse;
+  }
+  .form-card {
+    margin: 50px 0;
+  }
+}
