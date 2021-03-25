@@ -1,9 +1,11 @@
 .sample {
-  background-color: rgb(249, 251, 253);
+  background-color: var(--bg-grey);
   padding: 96px 0;
+  overflow: hidden;
 }
 .sample-container {
   display: flex;
+  align-items: center;
 }
 .form-card .card-cover {
   clip-path: polygon(100% 0, 100% 95%, 70% 100%, 30% 100%, 0 95%, 0 0);
@@ -14,6 +16,7 @@
   margin-right: 80px;
   max-width: 400px;
   /* max-width: 400px; */
+
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -65,7 +68,7 @@
   padding: 15px;
   color: white;
   text-align: center;
-  background-color: rgb(56, 158, 127);
+  background-color: var(--color-green);
   text-decoration: none;
   margin-top: 20px;
   border-radius: 10px;
@@ -79,7 +82,7 @@
   flex: 5;
 }
 .sample-text .sample-heading {
-  font-size: 2em;
+  font-size: 1.8em;
   line-height: 1.35;
 }
 .sample-text .sample-heading span {
@@ -100,7 +103,7 @@
   display: flex;
   padding: 15px;
   align-items: center;
-  color: rgb(66, 186, 150);
+  color: var(--color-green);
 }
 .sample-text ul li i {
   color: rgb(189, 189, 189);
@@ -124,11 +127,18 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  .container {
-    max-width: 95vw;
+  section.sample {
+    padding-bottom: 0;
   }
   .sample-container {
     flex-direction: column-reverse;
+  }
+  .sample-text ul {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .sample-text > ul > li {
+    padding: 15px 0;
   }
   .form-card {
     margin: 50px 0;

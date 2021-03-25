@@ -1,0 +1,39 @@
+@keyframes leftright {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes rightleft {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.show-from-left {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+.show-from-right {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.left-to-right {
+  animation: leftright 0.5s forwards ease-in-out;
+}
+.right-to-left {
+  animation: rightleft 0.5s forwards ease-in-out;
+}
+section {
+  max-width: 100vw;
+  overflow: hidden;
+}

@@ -1,0 +1,240 @@
+.focus {
+  background-color: var(--bg-grey);
+}
+.focus-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 160px;
+}
+.focus-right img {
+  max-width: 100%;
+}
+.focus-left * {
+  font-weight: 300;
+}
+.focus-left > h4 {
+  font-size: 1.9em;
+}
+.focus-left > span {
+  font-size: 1.9em;
+  color: var(--color-blue);
+}
+.focus-left > p {
+  font-size: 1.2em;
+  color: var(--color-blue-light-2);
+  padding: 20px 0 30px 0;
+}
+.focus-left li {
+  display: inline-block;
+}
+.focus-left li span {
+  display: block;
+}
+.focus-left li span:first-child {
+  font-size: 1.2rem;
+}
+.focus-left li span:last-child {
+  font-size: 1rem;
+  color: var(--color-blue-light-2);
+}
+.focus-left ul > li:nth-child(2) {
+  margin: 0 30px;
+  padding: 0 30px;
+  border-left: 0.5px rgba(185, 185, 185, 0.432) solid;
+  border-right: 0.5px rgba(185, 185, 185, 0.432) solid;
+}
+
+/* ------------ PRICING START ------------ */
+.pricing {
+  padding-top: 6rem;
+}
+.pricing-heading {
+  text-align: center;
+  max-width: 66.6666%;
+  margin: 0 auto;
+}
+.pricing-heading * {
+  font-weight: 300;
+}
+.pricing-heading h2 {
+  font-size: 2.3rem;
+}
+.pricing-heading > p {
+  font-size: 1.3rem;
+  color: var(--color-blue-light-2);
+}
+.pricing-heading .switch-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-light-2);
+  margin: 20px 0 68px 0;
+}
+.switch-button {
+  position: relative;
+}
+.switch-button input {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 20px;
+}
+.switch-button div.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: rgb(228, 228, 228);
+  margin: 0 15px;
+  border-radius: 999px;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.switch-button div.switch::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  transition: all 1s ease;
+}
+.switch-button input:checked ~ .switch {
+  background-color: var(--color-blue);
+}
+.switch-button input:checked ~ .switch::after {
+  right: 2px;
+  left: unset;
+}
+
+/* ------- PRICING CARD START ------- */
+.pricing {
+  background-color: var(--bg-grey);
+}
+.pricing-cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.card.standard-card {
+  position: relative;
+  z-index: 1;
+}
+.pricing-cards .card {
+  background-color: #fff;
+  box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pricing-cards .card h4 {
+  margin-top: 40px;
+  padding: 5px 20px;
+  border-radius: 1000px;
+  font-size: 12px;
+  background-color: rgb(234, 239, 253);
+  color: var(--color-blue);
+  text-transform: uppercase;
+}
+.standard-card .price {
+  margin: 20px 0;
+  font-size: 2rem;
+  text-align: center;
+}
+.standard-card .price span {
+  font-size: 3.7rem;
+}
+.standard-card .price h5 {
+  font-size: 1rem;
+  color: var(--color-blue-light-2);
+}
+.standard-card ul {
+  width: 70%;
+  flex: 1;
+  padding: 40px 0 48px 0;
+}
+.standard-card ul li {
+  display: flex;
+  padding: 10px 0;
+}
+.standard-card ul li .icon-check {
+  font-size: 1.2rem;
+  color: rgb(189, 189, 189);
+  margin-right: 15px;
+}
+.standard-card > a {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+.standard-card > a:hover {
+  background-color: rgb(52, 52, 158);
+}
+.card a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.enterprise-card {
+  align-self: center;
+  height: 90%;
+  margin-left: -15px;
+}
+.enterprise-card .offer {
+  flex: 1;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+}
+.enterprise-card .offer p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--color-blue-light-2);
+  text-align: center;
+}
+.enterprise-card a {
+  background-color: rgb(217, 226, 239);
+  color: var(--color-blue-light-2);
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+  .focus-left ul {
+    display: flex;
+    justify-content: center;
+  }
+  .pricing-heading {
+    max-width: 80%;
+  }
+  .focus-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .pricing-cards {
+    grid-template-columns: 100%;
+  }
+  .pricing-cards .enterprise-card {
+    height: 450px;
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  ul.list-question {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -2,9 +2,22 @@
   overflow: hidden;
 }
 .hero-container {
-  padding: 90px 0 0 0;
+  padding: 120px 0 0 0;
+  opacity: 0;
   display: flex;
+  animation: showing 0.5s forwards;
 }
+@keyframes showing {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 .hero-container .hero-left {
   min-width: 500px;
 }
@@ -40,13 +53,13 @@
   color: var(--color-blue);
 }
 .hero-container .hero-left p {
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 300;
 }
 
 .hero-container .hero-left p:nth-child(3) {
-  margin-top: 1.4em;
-  font-size: 19px;
+  margin-top: 1.4rem;
+  font-size: 1.2rem;
   color: var(--color-blue-light);
 }
 .hero-container .hero-left p span {
@@ -55,8 +68,7 @@
 
 @media only screen and (max-width: 1024px) {
   .hero-container .hero-left {
-    min-width: 400px;
-    font-size: 14px;
+    min-width: unset;
   }
   .hero-container .hero-right img {
     height: 300px;

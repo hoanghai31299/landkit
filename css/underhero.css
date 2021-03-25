@@ -1,3 +1,7 @@
+.under-hero {
+  /* border-top: 0.5px rgba(82, 82, 82, 0.103) solid; */
+  border-bottom: 0.5px rgba(82, 82, 82, 0.103) solid;
+}
 .list-feature {
   padding: 6rem 0;
 }
@@ -10,7 +14,18 @@ li .feature-icon svg {
   height: 48px !important;
 }
 .list-feature > ul > li {
+  opacity: 0;
   padding: 0 20px;
+  animation: showing 0.5s forwards;
+}
+.list-feature > ul > li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.list-feature > ul > li:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.list-feature > ul > li:nth-child(3) {
+  animation-delay: 0.9s;
 }
 .list-feature > ul > li h3 {
   font-size: 1.3em;
@@ -25,9 +40,9 @@ li .feature-icon svg {
 }
 
 .list-client {
-  padding: 40px;
-  border-top: 0.5px rgba(82, 82, 82, 0.103) solid;
-  border-bottom: 0.5px rgba(82, 82, 82, 0.103) solid;
+  padding: 3rem;
+  /* border-top: 0.5px rgba(82, 82, 82, 0.103) solid;
+  border-bottom: 0.5px rgba(82, 82, 82, 0.103) solid; */
 }
 .list-client > ul {
   display: grid;
@@ -59,5 +74,10 @@ li .feature-icon svg {
   }
   .list-client > ul {
     grid-template-columns: repeat(2, auto);
+  }
+  .list-client {
+    padding: 1rem;
+    /* border-top: 0.5px rgba(82, 82, 82, 0.103) solid;
+  border-bottom: 0.5px rgba(82, 82, 82, 0.103) solid; */
   }
 }

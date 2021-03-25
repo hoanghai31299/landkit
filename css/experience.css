@@ -1,0 +1,94 @@
+.boostrap {
+  padding: 6rem 0;
+  max-width: 100vw;
+  overflow: hidden;
+}
+.boostrap-container {
+  display: flex;
+  align-items: center;
+}
+.boostrap-left {
+  flex: 4;
+}
+.boostrap-left * {
+  font-weight: 300;
+}
+.boostrap-left > h4 {
+  font-size: 1.9em;
+}
+.boostrap-left > span {
+  font-size: 1.9em;
+  color: var(--color-blue);
+}
+.boostrap-left > p {
+  font-size: 1.2em;
+  color: var(--color-blue-light);
+  padding: 20px 0 30px 0;
+}
+.boostrap-item {
+  display: flex;
+}
+.boostrap-item .boostrap-item-icon {
+  margin-right: 20px;
+}
+.boostrap-item .boostrap-item-content {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.boostrap-item .boostrap-item-content h5 {
+  font-size: 1.2rem;
+}
+.boostrap-item .boostrap-item-content p {
+  font-size: 1rem;
+  color: var(--color-blue-light);
+}
+.boostrap-right {
+  flex: 6;
+  background-image: url("../assets/images/brush.svg");
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-position: left bottom;
+}
+.boostrap-right .image-rotate {
+  margin-left: 40px;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+.boostrap-right .image-rotate img {
+  float: left;
+  max-width: 120%;
+  transform: rotateY(-35deg) rotateX(10deg);
+  border-radius: 10px;
+  backface-visibility: hidden;
+  box-shadow: 25px 60px 125px -25px rgb(80 102 144 / 10%),
+    16px 40px 75px -40px rgb(0 0 0 / 20%);
+}
+
+@media only screen and (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+  .boostrap-left {
+    flex: 6;
+  }
+  .boostrap {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .boostrap-container {
+    flex-direction: column;
+  }
+  .boostrap-right {
+    transform: translateX(-31px);
+  }
+  .image-rotate {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .image-rotate img {
+    margin-left: -30px;
+    max-width: 100%;
+  }
+}
