@@ -215,7 +215,7 @@
 
 /* -----BACKGROUND----- */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   :root {
     font-size: 12px;
   }

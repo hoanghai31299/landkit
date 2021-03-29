@@ -14,15 +14,15 @@
   flex: 5;
   margin-right: 80px;
   max-width: 400px;
-  /* max-width: 400px; */
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
   box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05) !important;
 }
 .form-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) !important;
+  box-shadow: 0 1.4rem 9rem rgba(80, 82, 87, 0.253) !important;
 }
 .form-card .card-cover > img {
   max-width: 100%;
@@ -81,10 +81,11 @@
   background-color: var(--color-green);
   text-decoration: none;
   margin-top: 20px;
+  cursor: pointer;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
-.sample-form a:hover {
+.sample-form button:hover {
   background-color: rgb(35, 95, 77);
   transform: translateY(-5px);
 }
@@ -136,12 +137,13 @@
     font-size: 13px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   section.sample {
     padding-bottom: 0;
   }
   .sample-container {
     flex-direction: column-reverse;
+    align-items: unset;
   }
   .sample-text ul {
     display: grid;
@@ -152,5 +154,6 @@
   }
   .form-card {
     margin: 50px 0;
+    max-width: unset;
   }
 }

@@ -1,7 +1,7 @@
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 .header-wrapper {
   padding: 15px 0;
@@ -276,16 +276,7 @@ ul.sub-menu-2 > li a:hover {
   display: none;
 }
 /* ----------- RESPONSIVE START -----------*/
-@media only screen and (max-width: 600px) {
-  .container {
-    max-width: 85vw !important;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
+
 @media only screen and (max-width: 1024px) {
   .container {
     max-width: 720px;
@@ -425,5 +416,15 @@ ul.sub-menu-2 > li a:hover {
   }
   .humberger-btn div:nth-child(2) {
     margin: 5px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 85vw !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 540px !important;
   }
 }
