@@ -1,8 +1,7 @@
 .boostrap {
-  padding: 6rem 0;
-  max-width: 100vw;
-  overflow: hidden;
+  padding: 6rem 0 9rem 0;
 }
+
 .boostrap-container {
   display: flex;
   align-items: center;
@@ -46,7 +45,7 @@
   flex: 6;
   background-image: url("../assets/images/brush.svg");
   background-repeat: no-repeat;
-  background-size: 400px;
+  background-size: 700px;
   background-position: left bottom;
 }
 .boostrap-right .image-rotate {
@@ -57,11 +56,11 @@
 .boostrap-right .image-rotate img {
   float: left;
   max-width: 120%;
-  transform: rotateY(-35deg) rotateX(10deg);
+  transform: rotateY(-35deg) rotateX(15deg);
   border-radius: 10px;
   backface-visibility: hidden;
-  box-shadow: 25px 60px 125px -25px rgb(80 102 144 / 10%),
-    16px 40px 75px -40px rgb(0 0 0 / 20%);
+  box-shadow: 25px 60px 25px -25px rgb(80 102 144 / 10%),
+    16px 40px 0px -40px rgb(0 0 0 / 0%);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -81,7 +80,7 @@
     flex-direction: column;
   }
   .boostrap-right {
-    transform: translateX(-31px);
+    transform: translateX(-33px);
   }
   .image-rotate {
     margin-top: 30px;

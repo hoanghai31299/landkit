@@ -1,5 +1,9 @@
 .focus {
   background-color: var(--bg-grey);
+  padding-top: 20rem;
+  margin-top: -20rem;
+  position: relative;
+  z-index: -12;
 }
 .focus-container {
   display: grid;
@@ -47,7 +51,9 @@
 /* ------------ PRICING START ------------ */
 .pricing {
   padding-top: 6rem;
+  position: relative;
 }
+
 .pricing-heading {
   text-align: center;
   max-width: 66.6666%;
@@ -115,9 +121,7 @@
 }
 
 /* ------- PRICING CARD START ------- */
-.pricing {
-  background-color: var(--bg-grey);
-}
+
 .pricing-cards {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -208,6 +212,8 @@
   background-color: rgb(217, 226, 239);
   color: var(--color-blue-light-2);
 }
+
+/* -----BACKGROUND----- */
 
 @media only screen and (max-width: 600px) {
   :root {

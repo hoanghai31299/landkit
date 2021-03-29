@@ -1,5 +1,4 @@
 .sample {
-  background-color: var(--bg-grey);
   padding: 96px 0;
   overflow: hidden;
 }
@@ -16,7 +15,6 @@
   margin-right: 80px;
   max-width: 400px;
   /* max-width: 400px; */
-
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -59,11 +57,23 @@
   top: 0;
   font-size: 12px;
 }
+.sample-form .form-item input ~ p {
+  text-align: right;
+  opacity: 0;
+  font-size: 0.7rem;
+  color: red;
+}
+.sample-form .form-item input.invalid ~ p {
+  opacity: 1;
+}
+
 .sample-form .form-item input:focus {
   border-bottom: 0.5px rgba(80, 80, 80, 0.76) solid;
 }
-.sample-form a {
+.sample-form button {
   display: block;
+  outline: none;
+  border: none;
   width: 100%;
   padding: 15px;
   color: white;

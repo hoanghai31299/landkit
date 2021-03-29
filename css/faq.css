@@ -1,8 +1,10 @@
 .faq {
   background-color: var(--bg-faq);
-  padding-top: 256px;
+  padding-top: 24rem;
   padding-bottom: 60px;
-  margin-top: calc(-256px + 60px);
+  margin-top: calc(-26rem + 60px);
+  position: relative;
+  z-index: -11;
 }
 
 ul.list-question {

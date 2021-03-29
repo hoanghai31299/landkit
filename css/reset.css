@@ -5,6 +5,9 @@
   font-family: var(--main-font);
   font-weight: 300;
 }
+body {
+  color: var(--color-black);
+}
 ul {
   list-style: none;
 }
