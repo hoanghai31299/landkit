@@ -134,6 +134,8 @@ formButton.addEventListener("click", (e) => {
 });
 
 ///slider
+
+///slider
 const slideItem = [
   {
     name: "airbnd",
@@ -242,7 +244,9 @@ const makeSlide = (
   btnNext,
   btnPrev,
   dots,
-  current
+  current,
+  draggable,
+  autoplay
 ) => {
   /// --- set up slide  --- //
   const offsetX = 1 / items.length;
@@ -299,10 +303,80 @@ const makeSlide = (
     slideWrapper.style.transform = `translateX(-${current * offsetX * 100}%)`;
     updateDotImage();
   });
-  //dragger
-  // slideWrapper.draggable = "true";
-  // slideWrapper.addEventListener("dragstart", (e) => {
-  //   console.log(e);
-  // });
+  //draggable implement
+  if (draggable) {
+    let firstPos, finalPos;
+    slideWrapper.style.cursor = "pointer";
+    slideWrapper.addEventListener("mousedown", startDrag);
+    slideWrapper.addEventListener("mouseup", endDrag);
+    // slideWrapper.addEventListener("mouseleave", endDrag);
+    function startDrag(e) {
+      e.cancelBubble = true;
+      firstPos = e.clientX;
+      console.log(e);
+      e.preventDefault();
+    }
+    function endDrag(e) {
+      finalPos = e.clientX;
+      let increase = finalPos > firstPos ? -1 : 1;
+      if (increase === 1 && current === items.length - 1) current = 0;
+      else if (increase === -1 && current === 0) current = items.length - 1;
+      else current += increase;
+      slideWrapper.style.transform = `translateX(-${current * offsetX * 100}%)`;
+      updateDotImage();
+    }
+  }
+  //autoplay implement
+  if (autoplay) {
+    const autoplay = () => {
+      if (current === items.length - 1) current = 0;
+      else current++;
+      slideWrapper.style.transform = `translateX(-${current * offsetX * 100}%)`;
+      updateDotImage();
+    };
+    let run = setInterval(autoplay, 3000);
+    imagesWrapper.style.cursor = "pointer";
+    imagesWrapper.addEventListener("mousedown", () => {
+      clearInterval(run);
+    });
+    imagesWrapper.addEventListener("mouseup", () => {
+      run = setInterval(autoplay, 3000);
+    });
+    btnNext.addEventListener("mouseleave", () => {
+      run = setInterval(autoplay, 3000);
+    });
+    btnPrev.addEventListener("mouseleave", () => {
+      run = setInterval(autoplay, 3000);
+    });
+    dots.addEventListener("mouseleave", () => {
+      run = setInterval(autoplay, 3000);
+    });
+    btnNext.addEventListener("mouseenter", () => {
+      clearInterval(run);
+    });
+    btnPrev.addEventListener("mouseenter", () => {
+      clearInterval(run);
+    });
+    dots.addEventListener("mouseenter", () => {
+      clearInterval(run);
+    });
+
+    slideWrapper.addEventListener("mousedown", () => {
+      clearInterval(run);
+    });
+    slideWrapper.addEventListener("mouseup", () => {
+      run = setInterval(autoplay, 3000);
+    });
+  }
 };
-makeSlide(slideWrapper, imgWrapper, slideItem, btnNext, btnPrev, dots, 0);
+makeSlide(
+  slideWrapper,
+  imgWrapper,
+  slideItem,
+  btnNext,
+  btnPrev,
+  dots,
+  0,
+  true,
+  true
+);
