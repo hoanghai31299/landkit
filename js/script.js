@@ -1,18 +1,18 @@
-const listSpanAccount = document.querySelectorAll("ul.account-menu>li>span");
+const listSpanAccount = document.querySelectorAll('ul.account-menu>li>span');
 listSpanAccount.forEach((span) => {
-  span.addEventListener("click", () => {
-    span.classList.toggle("show");
+  span.addEventListener('click', () => {
+    span.classList.toggle('show');
   });
 });
 
-const openNavMenuBtn = document.querySelector(".humberger-btn");
-const closeNavMenuBtn = document.querySelector(".close-btn");
-const navMenu = document.querySelector(".navigation");
-openNavMenuBtn.addEventListener("click", () => {
-  navMenu.classList.add("show");
+const openNavMenuBtn = document.querySelector('.humberger-btn');
+const closeNavMenuBtn = document.querySelector('.close-btn');
+const navMenu = document.querySelector('.navigation');
+openNavMenuBtn.addEventListener('click', () => {
+  navMenu.classList.add('show');
 });
-closeNavMenuBtn.addEventListener("click", () => {
-  navMenu.classList.remove("show");
+closeNavMenuBtn.addEventListener('click', () => {
+  navMenu.classList.remove('show');
 });
 
 //Typing writer
@@ -22,9 +22,9 @@ const typingAnimate = (texts, element) => {
   let time = 150;
   setInterval(() => {
     if (currentChar === texts[index].length + 30) {
-      let str = element.innerHTML.split("");
+      let str = element.innerHTML.split('');
       str.pop();
-      element.innerHTML = str.join("");
+      element.innerHTML = str.join('');
       if (element.innerHTML.length == 0) {
         currentChar = 0;
         index = ++index % texts.length;
@@ -41,14 +41,14 @@ const typingAnimate = (texts, element) => {
 };
 
 //window.onload = () => {
-const textArray = ["developers.", "founders.", "designers."];
-const spanAnimate = document.querySelector("span.type-writer");
+const textArray = ['developers.', 'founders.', 'designers.'];
+const spanAnimate = document.querySelector('span.type-writer');
 typingAnimate(textArray, spanAnimate);
 //};
 
-const pricingPrice = document.querySelector(".standard-card .price span");
-const checkbox = document.querySelector(".switch-button input");
-checkbox.addEventListener("click", () => {
+const pricingPrice = document.querySelector('.standard-card .price span');
+const checkbox = document.querySelector('.switch-button input');
+checkbox.addEventListener('click', () => {
   const increaseNumber = setInterval(() => {
     checkbox.disabled = true;
     let current = +pricingPrice.innerHTML;
@@ -70,65 +70,66 @@ function getOffset(el) {
     top: rect.top + window.scrollY,
   };
 }
-let card = document.querySelector(".form-card");
-let text = document.querySelector(".sample-text");
-let boostrapLeft = document.querySelector(".boostrap-left");
-let boostrapRight = document.querySelector(".boostrap-right");
-boostrapLeft.classList.add("show-from-left");
-boostrapRight.classList.add("show-from-right");
-let spanNumbers = document.querySelectorAll(".increase-number");
+let card = document.querySelector('.form-card');
+let text = document.querySelector('.sample-text');
+let boostrapLeft = document.querySelector('.boostrap-left');
+let boostrapRight = document.querySelector('.boostrap-right');
+boostrapLeft.classList.add('show-from-left');
+boostrapRight.classList.add('show-from-right');
+let spanNumbers = document.querySelectorAll('.increase-number');
 let hundred = 80;
 let twenty = 4;
 let ran = false;
-const cards = document.querySelectorAll(".pricing-cards .card");
-cards[0].classList.add("show-from-bottom");
-cards[1].classList.add("show-from-bottom");
+const cards = document.querySelectorAll('.pricing-cards .card');
+cards[0].classList.add('show-from-bottom');
+cards[1].classList.add('show-from-bottom');
 window.onscroll = (e) => {
   let scrollTop = window.pageYOffset;
   if (scrollTop >= 399) {
-    card.classList.add("left-to-right");
-    text.classList.add("right-to-left");
+    card.classList.add('left-to-right');
+    text.classList.add('right-to-left');
   }
   if (scrollTop >= 1199) {
-    boostrapLeft.classList.add("left-to-right");
-    boostrapRight.classList.add("right-to-left");
+    boostrapLeft.classList.add('left-to-right');
+    boostrapRight.classList.add('right-to-left');
   }
   if (scrollTop >= 3205) {
-    cards[0].classList.add("bottom-up");
-    cards[1].style = "animation-delay: 0.1s";
-    cards[1].classList.add("bottom-up");
+    cards[0].classList.add('bottom-up');
+    cards[1].style = 'animation-delay: 0.1s';
+    cards[1].classList.add('bottom-up');
   }
 };
 
 //validate form
-const inputsForm = document.querySelectorAll(".form-item input");
-const formButton = document.querySelector(".sample-form>button");
+const inputsForm = document.querySelectorAll('.form-item input');
+const formButton = document.querySelector('.sample-form>button');
 inputsForm.forEach((el) => {
-  el.addEventListener("keyup", (e) => {
-    el.classList.remove("invalid");
+  el.addEventListener('keyup', (e) => {
+    el.classList.remove('invalid');
     if (e.keyCode === 13) {
       e.preventDefault();
       formButton.click();
     }
   });
 });
-formButton.addEventListener("click", (e) => {
+formButton.addEventListener('click', (e) => {
   e.preventDefault();
   const [name, email, password] = inputsForm;
   const errors = [];
   if (name.value.length === 0) {
-    errors.push("name is not valid");
-    name.classList.add("invalid");
-  } else name.classList.remove("invalid");
-  const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    errors.push('name is not valid');
+    name.classList.add('invalid');
+  } else name.classList.remove('invalid');
+  const re =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
   if (!re.test(email.value)) {
-    errors.push("email is not valid");
-    email.classList.add("invalid");
-  } else email.classList.remove("invalid");
+    errors.push('email is not valid');
+    email.classList.add('invalid');
+  } else email.classList.remove('invalid');
   if (password.value.length < 8) {
-    errors.push("password is not valid");
-    password.classList.add("invalid");
-  } else password.classList.remove("invalid");
+    errors.push('password is not valid');
+    password.classList.add('invalid');
+  } else password.classList.remove('invalid');
 
   if (errors.length === 0) console.log(name.value, email.value, password.value);
 });
@@ -138,9 +139,9 @@ formButton.addEventListener("click", (e) => {
 ///slider
 const slideItem = [
   {
-    name: "airbnd",
-    cover: "/assets/images/photo-1.jpg",
-    brandColor: "#000",
+    name: 'airbnd',
+    cover: './assets/images/photo-1.jpg',
+    brandColor: '#000',
     brandLogo: `<svg
                   viewBox="0 0 2761 991"
                           xmlns="http://www.w3.org/2000/svg"
@@ -152,12 +153,12 @@ const slideItem = [
                           ></path>
                         </svg>`,
     quote: `Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.`,
-    author: "NEWW",
+    author: 'NEWW',
   },
   {
-    name: "airbnd",
-    cover: "/assets/images/photo-26.jpg",
-    brandColor: "#aaa",
+    name: 'airbnd',
+    cover: './assets/images/photo-26.jpg',
+    brandColor: '#aaa',
     brandLogo: `<svg
                   viewBox="0 0 2761 991"
                           xmlns="http://www.w3.org/2000/svg"
@@ -169,12 +170,12 @@ const slideItem = [
                           ></path>
                         </svg>`,
     quote: `Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.`,
-    author: "NEWW",
+    author: 'NEWW',
   },
   {
-    name: "airbnd2",
-    cover: "/assets/images/dashkit.jpg",
-    brandColor: "#0f0",
+    name: 'airbnd2',
+    cover: './assets/images/dashkit.jpg',
+    brandColor: '#0f0',
     brandLogo: `<svg
                   viewBox="0 0 2761 991"
                           xmlns="http://www.w3.org/2000/svg"
@@ -186,12 +187,12 @@ const slideItem = [
                           ></path>
                         </svg>`,
     quote: `Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.`,
-    author: "Hoang Hai",
+    author: 'Hoang Hai',
   },
   {
-    name: "airbnd2",
-    cover: "/assets/images/photo-3.jpg",
-    brandColor: "#00f",
+    name: 'airbnd2',
+    cover: './assets/images/photo-3.jpg',
+    brandColor: '#00f',
     brandLogo: `<svg
                   viewBox="0 0 2761 991"
                           xmlns="http://www.w3.org/2000/svg"
@@ -203,13 +204,13 @@ const slideItem = [
                           ></path>
                         </svg>`,
     quote: `Landkit is hands down the most useful front end Bootstrap theme I've ever used. I can't wait to use it again for my next project.`,
-    author: "Jennier Rosé",
+    author: 'Jennier Rosé',
   },
 ];
 
 const generateSlideItem = ({ brandLogo, brandColor, quote, author }) => {
-  const newSlide = document.createElement("div");
-  newSlide.classList.add("slider-item");
+  const newSlide = document.createElement('div');
+  newSlide.classList.add('slider-item');
   newSlide.innerHTML = ` <div class="card-customer">
                     <blockquote>
                       <!-- Brand -->
@@ -231,11 +232,11 @@ const generateSlideItem = ({ brandLogo, brandColor, quote, author }) => {
   return newSlide;
 };
 
-const slideWrapper = document.querySelector(".slider-wrapper");
-const imgWrapper = document.querySelector(".image-slider");
-const btnPrev = document.querySelector(".btn-prev.slide-btn");
-const btnNext = document.querySelector(".btn-next.slide-btn");
-const dots = document.querySelector(".slide-dots");
+const slideWrapper = document.querySelector('.slider-wrapper');
+const imgWrapper = document.querySelector('.image-slider');
+const btnPrev = document.querySelector('.btn-prev.slide-btn');
+const btnNext = document.querySelector('.btn-next.slide-btn');
+const dots = document.querySelector('.slide-dots');
 // const btnPrev = document.querySelector("#");
 const makeSlide = (
   slideWrapper,
@@ -255,8 +256,8 @@ const makeSlide = (
   slideWrapper.style.width = `${items.length}00%`;
   //render slide and image to html dom
   items.forEach((item, i) => {
-    const newCover = document.createElement("img");
-    if (i !== current) newCover.classList.add("hide");
+    const newCover = document.createElement('img');
+    if (i !== current) newCover.classList.add('hide');
     newCover.src = item.cover;
     newCover.alt = item.name;
     const newSlide = generateSlideItem(item);
@@ -264,10 +265,10 @@ const makeSlide = (
     imagesWrapper.appendChild(newCover);
     slideWrapper.appendChild(newSlide);
     //add new dots
-    const newDot = document.createElement("div");
-    newDot.classList.add("dot");
-    if (i === current) newDot.classList.add("current");
-    newDot.addEventListener("click", (e) => moveToSlide(i, e.target));
+    const newDot = document.createElement('div');
+    newDot.classList.add('dot');
+    if (i === current) newDot.classList.add('current');
+    newDot.addEventListener('click', (e) => moveToSlide(i, e.target));
     dots.appendChild(newDot);
   });
   const updateDotImage = () => {
@@ -275,11 +276,11 @@ const makeSlide = (
     let dotsEl = dots.childNodes;
     for (let i = 0; i < items.length; i++) {
       if (i === current) {
-        dotsEl[i].classList.add("current");
-        imagesEl[i].classList.remove("hide");
+        dotsEl[i].classList.add('current');
+        imagesEl[i].classList.remove('hide');
       } else {
-        dotsEl[i].classList.remove("current");
-        imagesEl[i].classList.add("hide");
+        dotsEl[i].classList.remove('current');
+        imagesEl[i].classList.add('hide');
       }
     }
   };
@@ -289,14 +290,14 @@ const makeSlide = (
     slideWrapper.style.transform = `translateX(-${current * offsetX * 100}%)`;
     updateDotImage();
   };
-  btnNext.addEventListener("click", (e) => {
+  btnNext.addEventListener('click', (e) => {
     if (current === items.length - 1) {
       current = 0;
     } else current++;
     slideWrapper.style.transform = `translateX(-${current * offsetX * 100}%)`;
     updateDotImage();
   });
-  btnPrev.addEventListener("click", (e) => {
+  btnPrev.addEventListener('click', (e) => {
     if (current === 0) {
       current = items.length - 1;
     } else current--;
@@ -306,9 +307,9 @@ const makeSlide = (
   //draggable implement
   if (draggable) {
     let firstPos, finalPos;
-    slideWrapper.style.cursor = "pointer";
-    slideWrapper.addEventListener("mousedown", startDrag);
-    slideWrapper.addEventListener("mouseup", endDrag);
+    slideWrapper.style.cursor = 'pointer';
+    slideWrapper.addEventListener('mousedown', startDrag);
+    slideWrapper.addEventListener('mouseup', endDrag);
     // slideWrapper.addEventListener("mouseleave", endDrag);
     function startDrag(e) {
       e.cancelBubble = true;
@@ -335,36 +336,36 @@ const makeSlide = (
       updateDotImage();
     };
     let run = setInterval(autoplay, 3000);
-    imagesWrapper.style.cursor = "pointer";
-    imagesWrapper.addEventListener("mousedown", () => {
+    imagesWrapper.style.cursor = 'pointer';
+    imagesWrapper.addEventListener('mousedown', () => {
       clearInterval(run);
     });
-    imagesWrapper.addEventListener("mouseup", () => {
+    imagesWrapper.addEventListener('mouseup', () => {
       run = setInterval(autoplay, 3000);
     });
-    btnNext.addEventListener("mouseleave", () => {
+    btnNext.addEventListener('mouseleave', () => {
       run = setInterval(autoplay, 3000);
     });
-    btnPrev.addEventListener("mouseleave", () => {
+    btnPrev.addEventListener('mouseleave', () => {
       run = setInterval(autoplay, 3000);
     });
-    dots.addEventListener("mouseleave", () => {
+    dots.addEventListener('mouseleave', () => {
       run = setInterval(autoplay, 3000);
     });
-    btnNext.addEventListener("mouseenter", () => {
+    btnNext.addEventListener('mouseenter', () => {
       clearInterval(run);
     });
-    btnPrev.addEventListener("mouseenter", () => {
+    btnPrev.addEventListener('mouseenter', () => {
       clearInterval(run);
     });
-    dots.addEventListener("mouseenter", () => {
+    dots.addEventListener('mouseenter', () => {
       clearInterval(run);
     });
 
-    slideWrapper.addEventListener("mousedown", () => {
+    slideWrapper.addEventListener('mousedown', () => {
       clearInterval(run);
     });
-    slideWrapper.addEventListener("mouseup", () => {
+    slideWrapper.addEventListener('mouseup', () => {
       run = setInterval(autoplay, 3000);
     });
   }
